@@ -1,0 +1,23 @@
+
+services:
+  srcds-cssv34:
+    build:
+      context: .docker
+      dockerfile: server.Dockerfile
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 1024M
+        reservations:
+          cpus: '0.25'
+          memory: 256M
+    ports:
+      - "1111:11111"
+      - "1111:11111/udp"
+      - "2111:21111/udp"
+    volumes:
+      - ./server:/home/container
+      - ./.docker/configs/server.cfg:/home/container/cstrike/cfg/server.cfg
+    command: sh -c "screen -A -m -d -S srv ./srcds_run -game cstrike +map de_inferno -ip 0.0.0.0 -port 11111 +tv_port 21111 -maxplayers 12 +sv_pure 2 -insecure -debug -debuglog ktvcss-debug.log -condebug +mp_dynamicpricing 0 -localcser -nomaster -tickrate 100 -timeout 5 -fps_max 500 -usercon -noipx -net_port_try 1 -pidfile ../game.pid; while true; do sleep 1; done"
+
