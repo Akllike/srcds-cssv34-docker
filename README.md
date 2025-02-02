@@ -16,7 +16,6 @@ Link to the Docker Hub image - https://hub.docker.com/r/phenom1337/cssold_srcds_
 Create a ```docker-compose.yaml``` file with the following content:
 
 ```yaml
-version: '3.8'
 services:
   srcds-cssv34:
     image: phenom1337/cssold_srcds_cssv34:latest
