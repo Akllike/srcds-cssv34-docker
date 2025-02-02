@@ -2,6 +2,10 @@
 
 This image for running a Counter-Strike: Source v34 game server. The server runs inside a screen session, making it easy to manage and connect to the server console when needed.
 
+Link to the Docker Hub image - https://hub.docker.com/r/phenom1337/cssold_srcds_cssv34
+- :latest image - [phenom1337/cssold_srcds_cssv34:latest](https://hub.docker.com/layers/phenom1337/cssold_srcds_cssv34/latest/images/sha256-9bfe93a539fb504afa6939c650d75bca7a6969c67805d28e491990d5f7471cb2?tab=layers)
+- :ru Russian Locale image - [phenom1337/cssold_srcds_cssv34:ru](https://hub.docker.com/layers/phenom1337/cssold_srcds_cssv34/ru/images/sha256-a8884e84b5e7be8ad7dfdd10a4288071972fbdfe7874eed8863e6b4817e9605a)
+
 ## Features:
 - Russian Localization Support: The server is configured to support the Russian language, including texts and messages.
 - Using screen: The server runs inside a screen session, allowing easy access to its console and management.
