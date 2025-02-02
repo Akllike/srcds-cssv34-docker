@@ -1,4 +1,4 @@
-# Image for Counter-Strike: Source v34
+# Docker image i386/debian 10 for running Counter Strike: Source v34 Server
 
 This image for running a Counter-Strike: Source v34 game server. The server runs inside a screen session, making it easy to manage and connect to the server console when needed.
 
