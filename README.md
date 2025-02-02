@@ -16,6 +16,7 @@ Link to the Docker Hub image - https://hub.docker.com/r/phenom1337/cssold_srcds_
 Create a ```docker-compose.yaml``` file with the following content:
 
 ```yaml
+version: '3.8'
 services:
   srcds-cssv34:
     image: phenom1337/cssold_srcds_cssv34:latest
@@ -31,14 +32,24 @@ services:
     volumes:
       - ./server:/home/container
     command: >
-      sh -c "screen -A -m -d -S srv ./srcds_run -game cstrike +map de_dust2 -ip 0.0.0.0 -port 27015 +tv_port 27016 -maxplayers 13 +sv_pure 2 -insecure -debug -condebug -localcser -nomaster -tickrate 100 -fps_max 500 -usercon;
-      while true; do sleep 1; done"
+      sh -c "screen -A -m -d -S srv ./srcds_run -game cstrike +map de_dust2 -ip 0.0.0.0 -port 27015 +tv_port 27016 -maxplayers 13 +sv_pure 2 -insecure -debug -condebug -localcser -nomaster -tickrate 100 -fps_max 500 -usercon; while true; do sleep 1; done"
 ```
 
 ## Start the server using Docker Compose:
 
 ```bash
-docker-compose up -d
+docker compose up -d
+```
+
+## Connect to the game server console
+
+```bash
+docker compose exec srcds-cssv34 screen -x srv
+```
+
+## Detached to the game server console
+```
+Press the keyboard shortcut: Ctrl + A + D
 ```
 
 ## Access the server:
@@ -48,7 +59,7 @@ docker-compose up -d
 ## Stop the server:
 
 ```bash
-docker-compose down
+docker compose down
 ```
 ## Configuration Details
 
